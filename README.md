@@ -1,14 +1,61 @@
 # utopic_toast
 
-A new Flutter package project.
+Toast Flutter package.
 
-## Getting Started
+You are free to correct my English!
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+###  Overview
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- In the true sense of Toast, you can call it whenever you need it, without any restrictions.
+
+- Showing multiple dismissible toasts at the same time with showing and hiding animation.
+
+- Pure flutter implementation, it is not easy to bring compatibility problems
+
+### Preview
+
+![ezgif com-resize](https://user-images.githubusercontent.com/8808766/77065247-fe239100-69f1-11ea-9eba-c9808e00d8ca.gif)
+
+### Getting started
+
+#### 1. add dependencies into you project pubspec.yaml file
+``` dart
+dependencies:
+     utopic_toast: ^0.0.1+1
+```
+
+#### 2. import BotToast lib
+``` dart
+import 'package:utopic_toast/utopic_toast.dart';
+```
+
+#### 3. initialization ToastOverlay
+``` dart
+// wrap MaterialApp builder's child with ToastOverlay and set your custom params
+MaterialApp(
+  ...
+  builder: (context, child) {
+    return ToastOverlay(child: child);
+  },
+  ...
+);
+```
+
+#### 4. use ToastManager
+``` dart
+var toastFuture = ToastManager().showToast(
+  'YOUR MESSAGE TO USER',
+  type: ToastType.error, // set toast type to change presetted color theme
+  action: SnackBarAction(
+    label: 'HAY',
+    onPressed: () {
+      print('yay');
+    },
+  ),
+  duration: Duration(seconds: 3),
+);
+```
+
+```dart
+toastFuture.dismiss(); // to hide toast
+```
