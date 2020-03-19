@@ -1,0 +1,21 @@
+name: utopic_toast_example
+description: Demonstrates how to use the utopic_toast package.
+
+version: 0.0.1+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  utopic_toast:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
