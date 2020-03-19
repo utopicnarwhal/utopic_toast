@@ -78,7 +78,7 @@ class ToastManager {
     );
   }
 
-  void hideToastByKey(Key toastKey, {showAnim = true}) async {
+  void _hideToastByKey(Key toastKey, {showAnim = true}) async {
     if (_toastsController == null) {
       print('Toast manager is not initialized');
       return;

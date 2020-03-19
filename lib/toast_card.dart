@@ -83,7 +83,7 @@ class _ToastCard extends StatelessWidget {
       result = Dismissible(
         key: key,
         onDismissed: (_) {
-          ToastManager().hideToastByKey(key, showAnim: false);
+          ToastManager()._hideToastByKey(key, showAnim: false);
         },
         child: result,
       );
