@@ -2,7 +2,7 @@ part of 'utopic_toast.dart';
 
 class _ToastCard extends StatelessWidget {
   final String message;
-  final SnackBarAction action;
+  final ToastAction action;
   final ToastType type;
 
   const _ToastCard({
@@ -65,15 +65,11 @@ class _ToastCard extends StatelessWidget {
                 style: TextStyle(color: textColor),
               ),
             ),
-            action != null
-                ? Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: FlatButton(
-                      onPressed: action.onPressed,
-                      child: Text(action.label),
-                    ),
-                  )
-                : SizedBox(),
+            action?.build(
+                  context,
+                  () => ToastManager()._hideToastByKey(key),
+                ) ??
+                SizedBox(),
           ],
         ),
       ),

@@ -1,9 +1,9 @@
 part of 'utopic_toast.dart';
 
 /// [ToastOverlay] initialize and dispose [ToastManager] toast controller
-/// 
+///
 /// [ToastOverlay] should be inside [MaterialApp] to get [Theme.of(context)]
-/// 
+///
 /// EXAMPLE:
 /// ```dart
 /// MaterialApp(

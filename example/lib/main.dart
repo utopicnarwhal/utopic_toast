@@ -43,10 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
       String.fromCharCodes(charCodes),
       type: ToastType.values[rand.nextInt(ToastType.values.length)],
       action: rand.nextBool()
-          ? SnackBarAction(
+          ? ToastAction(
               label: 'HAY',
-              onPressed: () {
+              onPressed: (hideToast) {
                 print('yay');
+                hideToast();
               },
             )
           : null,

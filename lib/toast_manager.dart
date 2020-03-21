@@ -12,19 +12,19 @@ class ToastManager {
   final _toastAnimatedListKey = GlobalKey<AnimatedListState>();
   BehaviorSubject<List<ToastFuture>> _toastsController;
 
-  void showToast(
+  ToastFuture showToast(
     String message, {
     ToastType type = ToastType.notification,
-    SnackBarAction action,
+    ToastAction action,
     Duration duration = const Duration(seconds: 4),
   }) {
     if (_toastsController == null) {
       print('Toast manager is not initialized');
-      return;
+      return null;
     }
     if (message == null) {
       print('No message');
-      return;
+      return null;
     }
 
     final toastFuture = ToastFuture._(
@@ -45,6 +45,8 @@ class ToastManager {
     Future.delayed(duration, () {
       hideToast(toastFuture);
     });
+
+    return toastFuture;
   }
 
   void hideToast(ToastFuture toastFuture, {showAnim = true}) async {

@@ -1,7 +1,6 @@
 name: utopic_toast
-description: Toast Flutter package.
-version: 0.0.1+1
-author: Sergei Danilov
+description: Toast Flutter package. You can call it whenever you need it. Showing multiple dismissible toasts at the same time with showing and hiding animation.
+version: 0.1.0
 homepage: https://github.com/utopicnarwhal
 
 environment:
