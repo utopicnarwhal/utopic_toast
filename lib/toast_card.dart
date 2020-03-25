@@ -53,24 +53,29 @@ class _ToastCard extends StatelessWidget {
     Widget result = Card(
       color: backgroundColor.withOpacity(0.97),
       margin: EdgeInsets.zero,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 17, vertical: 10),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Expanded(
-              child: Text(
-                message,
-                textAlign: TextAlign.left,
-                style: TextStyle(color: textColor),
+      child: GestureDetector(
+        onTap: toastOverlay.enableTapToHide
+            ? () => ToastManager()._hideToastByKey(key)
+            : null,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 17, vertical: 10),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                child: Text(
+                  message,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: textColor),
+                ),
               ),
-            ),
-            action?.build(
-                  context,
-                  () => ToastManager()._hideToastByKey(key),
-                ) ??
-                SizedBox(),
-          ],
+              action?.build(
+                    context,
+                    () => ToastManager()._hideToastByKey(key),
+                  ) ??
+                  SizedBox(),
+            ],
+          ),
         ),
       ),
     );

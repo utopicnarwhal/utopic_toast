@@ -60,6 +60,11 @@ class ToastOverlay extends StatefulWidget {
   /// default is [true]
   final bool enableSwipeToDismiss;
 
+  /// Is toast should be hide on tap
+  ///
+  /// default is [false]
+  final bool enableTapToHide;
+
   final Widget child;
 
   const ToastOverlay({
@@ -74,6 +79,7 @@ class ToastOverlay extends StatefulWidget {
     this.normalBackgroundColor,
     this.normalTextColor,
     this.enableSwipeToDismiss = true,
+    this.enableTapToHide = false,
   }) : super(key: key);
 
   @override

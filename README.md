@@ -21,7 +21,7 @@ You are free to correct my English!
 #### 1. add dependencies into you project pubspec.yaml file
 ``` dart
 dependencies:
-     utopic_toast: ^0.0.1+1
+     utopic_toast: ^0.1.1
 ```
 
 #### 2. import BotToast lib
@@ -45,11 +45,12 @@ MaterialApp(
 ``` dart
 var toastFuture = ToastManager().showToast(
   'YOUR MESSAGE TO USER',
-  type: ToastType.error, // set toast type to change presetted color theme
-  action: SnackBarAction(
+  type: ToastType.error, // set toast type to change presetted theme color 
+  action: ToastAction(
     label: 'HAY',
-    onPressed: () {
+    onPressed: (hideToastFn) {
       print('yay');
+      hideToastFn();
     },
   ),
   duration: Duration(seconds: 3),
