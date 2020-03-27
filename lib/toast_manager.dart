@@ -10,7 +10,8 @@ class ToastManager {
   ToastManager._internal();
 
   final _toastAnimatedListKey = GlobalKey<AnimatedListState>();
-  BehaviorSubject<List<ToastFuture>> _toastsController;
+  final BehaviorSubject<List<ToastFuture>> _toastsController =
+      BehaviorSubject<List<ToastFuture>>.seeded([]);
 
   ToastFuture showToast(
     String message, {
@@ -94,14 +95,5 @@ class ToastManager {
       orElse: () => null,
     );
     hideToast(toastFuture, showAnim: showAnim);
-  }
-
-  void _init() {
-    _toastsController = BehaviorSubject<List<ToastFuture>>.seeded([]);
-  }
-
-  void _dispose() {
-    _toastsController?.close();
-    _toastsController = null;
   }
 }

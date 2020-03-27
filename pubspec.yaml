@@ -1,11 +1,11 @@
 name: utopic_toast
 description: Toast Flutter package. You can call it whenever you need it. Showing multiple dismissible toasts at the same time with showing and hiding animation.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/utopicnarwhal
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.12.13+hotfix.8 <2.0.0"
+  flutter: ">=1.12.13+hotfix.7 <2.0.0"
 
 dependencies:
   rxdart: ^0.23.1

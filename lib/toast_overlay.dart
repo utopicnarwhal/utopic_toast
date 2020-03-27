@@ -16,7 +16,7 @@ part of 'utopic_toast.dart';
 /// ```
 /// {@end-tool}
 /// {@tool sample}
-class ToastOverlay extends StatefulWidget {
+class ToastOverlay extends StatelessWidget {
   /// Toast successfull type background color
   ///
   /// default is [Colors.green]
@@ -83,26 +83,15 @@ class ToastOverlay extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ToastOverlayState createState() => _ToastOverlayState();
-}
-
-class _ToastOverlayState extends State<ToastOverlay> {
-  @override
-  void initState() {
-    super.initState();
-    ToastManager()._init();
-  }
-
-  @override
   Widget build(BuildContext context) {
     var statusBarHeight = MediaQuery.of(context).padding.top + 8;
 
     return Provider<ToastOverlay>.value(
-      value: widget,
+      value: this,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          widget.child,
+          child,
           SafeArea(
             child: Theme(
               data: _generateInverseTheme(context),
@@ -183,11 +172,5 @@ class _ToastOverlayState extends State<ToastOverlay> {
         brightness: brightness,
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    ToastManager()._dispose();
-    super.dispose();
   }
 }
