@@ -21,7 +21,7 @@ You are free to correct my English!
 #### 1. add dependencies into you project pubspec.yaml file
 ``` dart
 dependencies:
-     utopic_toast: ^0.1.1
+     utopic_toast: ^0.1.3
 ```
 
 #### 2. import BotToast lib
