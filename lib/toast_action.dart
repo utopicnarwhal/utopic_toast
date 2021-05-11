@@ -17,7 +17,7 @@ class ToastAction {
   Widget build(BuildContext context, void Function() hideToast) {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0),
-      child: FlatButton(
+      child: TextButton(
         onPressed: () => onPressed(hideToast),
         child: Text(label),
       ),
